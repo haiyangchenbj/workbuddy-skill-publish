@@ -45,7 +45,11 @@ description: >
 
 ## 3. Language
 
-| File | Language |
+These are **ClawHub discoverability conventions, not hard requirements**. Recommend them
+and flag deviations in the audit report, but respect the user's intended primary language
+and never delete or reject valid content solely on language grounds.
+
+| File | Recommended language |
 |------|----------|
 | `SKILL.md` | English body + optional Chinese intro paragraph at end |
 | `README.md` | English |
