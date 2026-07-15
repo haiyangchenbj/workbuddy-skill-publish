@@ -1,17 +1,23 @@
 # Skill Publish
 
-Audit, clean, and publish WorkBuddy skills to ClawHub and GitHub.
+Audit, clean, and publish agent skills to ClawHub and GitHub. Works with any SKILL.md-based skill in the OpenClaw ecosystem.
 
-Complements `skill-design-guide` (design-time) with publish-time workflow: scans for personal data, validates frontmatter, enforces bilingual documentation, removes internal-only content, and pushes clean distributions to both platforms.
+Complements `skill-design-guide` (design-time) with publish-time workflow.
 
-**Version**: v1.0.0 (2026-06-06)
+**Version**: v1.0.2 (2026-07-15)
+
+> ⚠️ **Publish has external side effects.** `audit` mode is read-only. `publish` mode
+> transmits the cleaned skill contents to ClawHub and GitHub (public services) and may
+> delete files in the remote GitHub repo. It never modifies your local files, and it only
+> runs after an audit and your explicit confirmation of the file list, target repos, and
+> version. Treat everything you publish as publicly visible.
 
 ## Modes
 
 | Mode | Command | Description |
 |------|---------|-------------|
-| **Audit** | "audit skill" | Scan only — report issues, no changes |
-| **Publish** | "publish skill" | Full pipeline: audit → clean → push → verify |
+| **Audit** | "audit skill" | Read-only scan — reports issues, changes nothing, transmits nothing |
+| **Publish** | "publish skill" | After audit + confirmation: clean (in a temp copy) → push to ClawHub/GitHub → verify |
 
 ## What It Checks
 
