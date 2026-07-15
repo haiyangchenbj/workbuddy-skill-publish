@@ -1,17 +1,22 @@
 # Skill Publish
 
-审计、清理并发布 WorkBuddy Skill 到 ClawHub 和 GitHub。
+审计、清理并发布 Agent Skill 到 ClawHub 和 GitHub。适用于 OpenClaw 生态中任何基于 SKILL.md 的 skill。
 
-与 `skill-design-guide`（设计阶段）配合，提供发布阶段工作流：扫描个人数据、校验 frontmatter、强制执行双语文档、移除内部内容、推送干净分发到两个平台。
+与 `skill-design-guide`（设计阶段）配合。
 
-**版本**: v1.0.0（2026-06-06）
+**版本**: v1.0.2（2026-07-15）
+
+> ⚠️ **发布模式有外部副作用。** 审计模式为只读。发布模式会把清理后的 skill 内容传输到
+> ClawHub 和 GitHub（公开服务），并可能删除远程 GitHub 仓库中的文件；它不会修改你的本地
+> 文件，且仅在完成审计并经你明确确认文件清单、目标仓库和版本后才执行。凡发布的内容都应视为
+> 公开可见。
 
 ## 模式
 
 | 模式 | 触发词 | 说明 |
 |------|--------|------|
-| **审计** | "检查发布" / "audit skill" | 只扫描报告问题，不改动文件 |
-| **发布** | "发布 skill" / "publish skill" | 全流程：审计 → 清理 → 推送 → 验证 |
+| **审计** | "检查发布" / "audit skill" | 只读扫描，报告问题，不改动文件、不传输任何内容 |
+| **发布** | "发布 skill" / "publish skill" | 审计并经确认后：在临时副本中清理 → 推送到 ClawHub/GitHub → 验证 |
 
 ## 检查项
 
